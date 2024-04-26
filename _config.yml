@@ -2,11 +2,14 @@ title: Akash Koneti
 logo: "/images/profilepic.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <br>
-  Data Scientist with a master's degree in Data Science from Rochester Institute of Technology.
+  Hello! I'm Akash Koneti, a recent graduate with a strong passion for data science and eager to kickstart my career in the field. 
+  I have a Master's degree in Data Science from Rochester Institute of Technology (GPA 3.70/4.00) and extensive hands-on experirnce in data analysis, machine leaarning and NLP.
+  
   <br><br>
   I am currently working as a Freelancer.
   <br><br>
-  <a href="https://www.linkedin.com/in/akashkoneti/">View my LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/akashkoneti/" target="_blank><img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white&link=https%3A
+"/></a> 
   
 theme: jekyll-theme-minimal
 #google_analytics: UA-000000-0 # your Google Analytics tracking ID here
