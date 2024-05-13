@@ -3649,22 +3649,24 @@ figcaption {
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
 }
 
 .home-portfolio_item-wrapper {
+  padding: 3px;
   border-radius: .375rem;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  box-shadow: 0 0 24px rgba(0, 0, 0, .15);
+  box-shadow: 0 0 24px rgba(0, 0, 0, .35);
 }
 
 .home-portfolio_image-wrapper {
   margin-top: 0;
   margin-bottom: 1.5rem;
+
 }
 
 .section-testimonials {
