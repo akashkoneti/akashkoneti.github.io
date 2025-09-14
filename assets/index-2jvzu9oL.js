@@ -21426,7 +21426,7 @@ function y2() {
         children: m.jsx("div", {
             className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
             children: m.jsxs(xe.div, {
-                className: "grid grid-cols-2 lg:grid-cols-4 gap-8 text-center",
+                className: "grid grid-cols-2 lg:grid-cols-3 gap-8 text-center",
                 initial: { opacity: 0, y: 50 },
                 whileInView: { opacity: 1, y: 0 },
                 transition: { duration: 0.8 },
@@ -21636,7 +21636,7 @@ const cx = [
         icon: "📊",
         description:
             "A comprehensive, interactive data analysis suite developed in R using the Shiny framework. It is designed for exploratory analysis of proteomics datasets, integrating multiple visualization and statistical tools to help users interactively explore, compare, and interpret protein expression data.",
-        image: "/proteomics-interactive-plots.png",
+        image: "/assets/images/proteomics-interactive-plots.png",
         detailImage: "/proteomics-interactive-plots.png",
         techStack: ["R", "Shiny", "ggplot2", "Plotly"],
         hasDemo: !1,
@@ -21730,7 +21730,7 @@ const cx = [
         icon: "🗺️",
         description:
             "Developed an interactive Streamlit web application to extract restaurant leads based on cuisine type and location from Yellow Pages. The app integrates web scraping, geocoding, and clustering to provide both a tabular lead list and an interactive map.",
-        image: "/restaurant-lead-generation-app.png",
+        image: "/assets/images/restaurant-lead-generation-app.png",
         detailImage: "/restaurant-lead-generation-app.png",
         techStack: [
             "Python",
@@ -21773,7 +21773,7 @@ const cx = [
         icon: "📈",
         description:
             "Develop a robust machine learning pipeline that processes historical NBA player data (1997–2023), performs feature engineering, exploratory analysis, and builds predictive models for performance-related insights.",
-        image: "/nba-predictive-analysis-charts.png",
+        image: "/assets/images/nba-predictive-analysis-charts.png",
         detailImage: "/nba-predictive-analysis-charts.png",
         techStack: [
             "Python",
@@ -21854,7 +21854,7 @@ const cx = [
         icon: "💬",
         description:
             "This project examines cognitive bias in online debates in the “Greatest of the Big Three” in Tennis. Using a custom Twitter extraction tool, around 3M tweets were analyzed alongside official ATP performance records. A statistical model, aligned with ATP rankings, compared objective performance with public sentiment, revealing patterns shaped by attention, external, and cultural biases.",
-        image: "/sentiment-analysis-social-media.png",
+        image: "/assets/images/sentiment-analysis-social-media.png",
         detailImage: "/sentiment-analysis-social-media.png",
         techStack: ["Python", "NLTK", "Transformers", "Twitter API"],
         hasDemo: !1,
@@ -21890,7 +21890,7 @@ const cx = [
         icon: "🏥",
         description:
             "Analyzed ~95K tweets to study public sentiment during Twitter acquisition and mass layoffs. Built an NLP pipeline to clean, classify, and visualize trends, revealing sharp opinion shifts driven by cultural and political events.",
-        image: "/twitter-sentiment-visualizations.png",
+        image: "/assets/images/twitter-sentiment-visualizations.png",
         detailImage: "/twitter-sentiment-visualizations.png",
         techStack: [
             "Python",
@@ -21974,7 +21974,7 @@ const cx = [
         icon: "📊",
         description:
             "Comprehensive analysis of homicide trends across the United States using crime data, examining patterns by agency type, geographical distribution, case closure rates, and demographic factors to identify key insights for policy and law enforcement strategies.",
-        image: "/usa-homicide-trends-dashboard.png",
+        image: "/assets/images/usa-homicide-trends-dashboard.png",
         detailImage: "/usa-homicide-trends-dashboard.png",
         techStack: ["Python", "Tableau", "Exploratory Data Analysis", "Excel"],
         hasDemo: !1,
