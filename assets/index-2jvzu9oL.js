@@ -23003,23 +23003,6 @@ function N2() {
                                                     "Send Email",
                                                 ],
                                             }),
-                                            m.jsxs(ge, {
-                                                variant: "outline",
-                                                className:
-                                                    "border-white text-white hover:bg-white hover:text-brand-blue w-full",
-                                                onClick: () =>
-                                                    window.open(
-                                                        "mailto:akashkoneti@outlook.com",
-                                                        "_blank"
-                                                    ),
-                                                children: [
-                                                    m.jsx(zT, {
-                                                        className:
-                                                            "w-4 h-4 mr-2",
-                                                    }),
-                                                    "Schedule a Call",
-                                                ],
-                                            }),
                                         ],
                                     }),
                                     m.jsxs("div", {
