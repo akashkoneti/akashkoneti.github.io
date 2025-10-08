@@ -21342,7 +21342,7 @@ function g2() {
                                                 "bg-gray-800 hover:bg-gray-900 text-white",
                                             onClick: () =>
                                                 window.open(
-                                                    "https://github.com",
+                                                    "https://github.com/akashkoneti",
                                                     "_blank"
                                                 ),
                                             children: [
@@ -22909,7 +22909,7 @@ function N2() {
                                                             "w-12 h-12 bg-gray-800 hover:bg-gray-900 text-white",
                                                         onClick: () =>
                                                             window.open(
-                                                                "https://github.com",
+                                                                "https://github.com/akashkoneti",
                                                                 "_blank"
                                                             ),
                                                         children: m.jsx("i", {
@@ -23082,7 +23082,7 @@ function A2() {
                                 className: "flex justify-center space-x-6",
                                 children: [
                                     m.jsx("a", {
-                                        href: "https://github.com",
+                                        href: "https://github.com/akashkoneti",
                                         target: "_blank",
                                         rel: "noopener noreferrer",
                                         className:
