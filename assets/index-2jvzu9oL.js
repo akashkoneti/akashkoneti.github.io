@@ -23072,26 +23072,6 @@ function A2() {
                                                 "fab fa-linkedin text-xl",
                                         }),
                                     }),
-                                    m.jsx("a", {
-                                        href: "https://kaggle.com",
-                                        target: "_blank",
-                                        rel: "noopener noreferrer",
-                                        className:
-                                            "text-gray-300 hover:text-white transition-colors",
-                                        children: m.jsx("i", {
-                                            className: "fab fa-kaggle text-xl",
-                                        }),
-                                    }),
-                                    m.jsx("a", {
-                                        href: "https://twitter.com",
-                                        target: "_blank",
-                                        rel: "noopener noreferrer",
-                                        className:
-                                            "text-gray-300 hover:text-white transition-colors",
-                                        children: m.jsx("i", {
-                                            className: "fab fa-twitter text-xl",
-                                        }),
-                                    }),
                                 ],
                             }),
                             m.jsx("p", {
