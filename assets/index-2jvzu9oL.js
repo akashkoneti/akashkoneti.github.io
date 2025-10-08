@@ -22932,36 +22932,6 @@ function N2() {
                                                                 "fab fa-linkedin",
                                                         }),
                                                     }),
-                                                    m.jsx(ge, {
-                                                        size: "sm",
-                                                        variant: "secondary",
-                                                        className:
-                                                            "w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white",
-                                                        onClick: () =>
-                                                            window.open(
-                                                                "https://kaggle.com",
-                                                                "_blank"
-                                                            ),
-                                                        children: m.jsx("i", {
-                                                            className:
-                                                                "fab fa-kaggle",
-                                                        }),
-                                                    }),
-                                                    m.jsx(ge, {
-                                                        size: "sm",
-                                                        variant: "secondary",
-                                                        className:
-                                                            "w-12 h-12 bg-blue-400 hover:bg-blue-500 text-white",
-                                                        onClick: () =>
-                                                            window.open(
-                                                                "https://twitter.com",
-                                                                "_blank"
-                                                            ),
-                                                        children: m.jsx("i", {
-                                                            className:
-                                                                "fab fa-twitter",
-                                                        }),
-                                                    }),
                                                 ],
                                             }),
                                         ],
