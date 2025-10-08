@@ -21357,7 +21357,7 @@ function g2() {
                                                 "bg-blue-600 hover:bg-blue-700 text-white",
                                             onClick: () =>
                                                 window.open(
-                                                    "https://linkedin.com",
+                                                    "https://www.linkedin.com/in/akashkoneti",
                                                     "_blank"
                                                 ),
                                             children: [
@@ -22924,7 +22924,7 @@ function N2() {
                                                             "w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white",
                                                         onClick: () =>
                                                             window.open(
-                                                                "https://linkedin.com",
+                                                                "https://www.linkedin.com/in/akashkoneti",
                                                                 "_blank"
                                                             ),
                                                         children: m.jsx("i", {
@@ -23092,7 +23092,7 @@ function A2() {
                                         }),
                                     }),
                                     m.jsx("a", {
-                                        href: "https://linkedin.com",
+                                        href: "https://www.linkedin.com/in/akashkoneti",
                                         target: "_blank",
                                         rel: "noopener noreferrer",
                                         className:
