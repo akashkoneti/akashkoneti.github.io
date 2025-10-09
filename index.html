@@ -1,266 +1,352 @@
 <!DOCTYPE html>
-<html lang='en'>
-
+<html lang="en">
 <head>
-  <meta charset='UTF-8'>
-  <title>Akash Koneti - Data Science | Machine Learning | Artificial Intelligence</title>
-  <meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Koneti - Data Science Portfolio</title>
+<style>
+  :root {
+    --accent: #f5d300;
+  }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto&amp;subset=latin,devanagari">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif; }
 
-  <style>
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-    }
+  body, html { height:100%; color:white; overflow-x:hidden; }
 
-    main {
-      flex: 1 0 auto;
-    }
+  /* HERO SECTION */
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: row; /* side by side on desktop */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 100vh;
+    padding: 2rem;
+    z-index: 1;
+    text-align: left;
+  }
 
-    h1.title,
-    .footer-copyright a {
-      font-family: 'Architects Daughter', cursive;
-      text-transform: uppercase;
-      font-weight: 900;
-    }
+  .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
 
-    /* Welcome animation */
-    body.welcome {
-      background: #000;
-      overflow: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+  .overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    z-index: -1;
+  }
 
-    .welcome .splash {
-      height: 0px;
-      padding: 0px;
-      border: 130em solid #fff;
-      position: fixed;
-      left: 50%;
-      top: 100%;
-      display: block;
-      box-sizing: initial;
-      overflow: hidden;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-    }
+  /* PROFILE CARD */
+  .profile-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
 
-    .welcome #welcome {
-      background: #fff;
-      width: 56px;
-      height: 56px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      overflow: hidden;
-      opacity: 0;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
-        moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-        moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-        materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards,
-        hide 2s 2.9s ease forwards;
-    }
+  .profile-card:hover { transform: translateY(-5px); }
 
-    /* moveIn */
-    .welcome header,
-    .welcome a.btn {
-      opacity: 0;
-      animation: moveIn 2s 3.1s ease forwards;
-    }
+  .meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
 
-    @keyframes init {
-      0% {
-        width: 0px;
-        height: 0px;
-      }
+  .meta img.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+  }
 
-      100% {
-        width: 56px;
-        height: 56px;
-        margin-top: 0px;
-        opacity: 1;
-      }
-    }
+  .meta h3 { font-size: 1.5rem; font-weight:700; color: var(--accent); }
+  .meta p { font-size:1rem; color:#e5e5e5; }
 
-    @keyframes puff {
-      0% {
-        top: 100%;
-        height: 0px;
-        padding: 0px;
-      }
+  .stats { display:flex; justify-content:space-between; gap:1rem; margin-top:0.5rem; }
+  .stat div:first-child { font-weight:800; font-size:1.2rem; color: var(--accent);}
+  .stat div:last-child { font-size:0.85rem; opacity:0.8; }
 
-      100% {
-        top: 50%;
-        height: 100%;
-        padding: 0px 100%;
-      }
-    }
+  /* HERO TEXT */
+  .hero-text {
+    max-width: 650px;
+    z-index:1;
+  }
 
-    @keyframes borderRadius {
-      0% {
-        border-radius: 50%;
-      }
+  .hero-text h1 {
+    font-size:clamp(2rem, 5vw, 3.4rem);
+    line-height:1.3;
+    font-weight:600;
+    margin-bottom:1rem;
+    color:white;
+  }
 
-      100% {
-        border-radius: 0px;
-      }
-    }
+  .hero-text p {
+    font-size:1.1rem;
+    line-height:1.6;
+    margin-bottom:1.5rem;
+    color:#d1d5db;
+  }
 
-    @keyframes moveDown {
-      0% {
-        top: 50%;
-      }
+  .ctas {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:1.5rem; /* spacing above buttons */
+  }
 
-      50% {
-        top: 40%;
-      }
+  .btn {
+    background: var(--accent);
+    color:#042027;
+    padding:0.8rem 1.4rem;
+    border-radius:10px;
+    font-weight:700;
+    font-size:1rem;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    transition: all 0.25s;
+  }
 
-      100% {
-        top: 100%;
-      }
-    }
+  .btn:hover { opacity:0.9; transform:translateY(-2px); }
 
-    @keyframes moveUp {
-      0% {
-        background: #ee6e73;
-        top: 100%;
-      }
+  .btn.ghost {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.3);
+    color:white;
+  }
 
-      50% {
-        top: 40%;
-      }
 
-      100% {
-        top: 50%;
-        background: #ee6e73;
-      }
-    }
+  header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 3rem;
+  z-index: 10;
+  background: rgba(0,0,0,0.6); /* semi-transparent background */
+  backdrop-filter: blur(6px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  /* border-bottom: #3b4149 1px solid; */
+}
 
-    @keyframes materia {
-      0% {
-        background: #ee6e73;
-      }
+.logo {
+  font-size: 2rem;
+  font-weight: 100;
+  color:  var(--accent);
+  text-decoration: none;
+}
 
-      50% {
-        background: #ee6e73;
-        top: 26px;
-      }
+nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
 
-      100% {
-        background: #ee6e73;
-        width: 100%;
-        height: 64px;
-        border-radius: 0px;
-        top: 26px;
-      }
-    }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
 
-    @keyframes moveIn {
-      0% {
-        opacity: 0;
-      }
+nav ul li a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s;
+}
 
-      100% {
-        opacity: 1;
-      }
-    }
+nav ul li a:hover {
+  color: var(--accent);
+}
 
-    @keyframes hide {
-      0% {
-        opacity: 1;
-      }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+}
 
-      100% {
-        opacity: 0;
-      }
-    }
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
 
-    /* Navbar */
-    nav.row.deep-purple.darken-3 {
-      background-color: #000 !important;
-    }
+  /* RESPONSIVE */
+  @media(max-width:992px) {
+    .hero { flex-direction: column; text-align:center; gap:2rem; padding:3rem 2rem; }
+    .hero-text { max-width:100%; }
+    .stats { flex-direction: column; gap:0.5rem; }
+  }
 
-    nav .fa {
-      color: #fff !important;
-    }
+  @media(max-width:768px) {
+    .profile-card { padding:1.5rem 2rem; }
+    .meta img.avatar { width:80px; height:80px; }
+    .hero-text h1 { font-size:1.8rem; }
+    .hero-text p { font-size:1rem; }
+    .btn { font-size:0.9rem; padding:0.6rem 1.2rem; }
+    .ctas { justify-content:center; }
+  }
 
-    /* Buttons */
-    a.btn.dropdown-button {
-      background-color: #fff !important;
-      color: #000 !important;
-    }
+  /* Tablet: stack stats vertically */
+@media(max-width:992px) and (min-width:769px) {
+  .stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 
-    /* Main text */
-    h1.title,
-    .flow-text,
-    blockquote.flow-text {
-      color: #fff !important;
-    }
+/* Mobile: keep stats side by side */
+@media(max-width:768px) {
+  .profile-card { padding:1.5rem 2rem; }
+  .meta img.avatar { width:80px; height:80px; }
+  .hero-text h1 { font-size:1.8rem; }
+  .hero-text p { font-size:1rem; }
+  .btn { font-size:0.9rem; padding:0.6rem 1.2rem; }
+  .ctas { justify-content:center; }
+  
+  .stats {
+    flex-direction: row; /* side by side on mobile */
+    gap: 0.8rem;
+  }
+}
 
-    /* Footer */
-    footer.page-footer,
-    .footer-copyright {
-      background-color: #000 !important;
-      color: #fff !important;
-    }
-  </style>
+@media(max-width:768px){
+  .hamburger {
+    display: flex;
+    position: absolute; /* position independently */
+    top: 2rem;
+    right: 1.5rem; /* move closer to the right edge */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+</style>
+
 </head>
+<body>
+<header>
+  <a href="#" class="logo">Akash Koneti</a>
+  <button class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
-<body class="welcome">
-  <span id="splash-overlay" class="splash"></span>
-  <span id="welcome" class="z-depth-4"></span>
+  <nav>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">PROJECTS</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <header class="navbar-fixed">
-    <nav class="row">
-      <div class="col s12">
-          <a href="#" class="brand-logo left" style="margin-left:15px; font-family:'Architects Daughter', cursive; color:white;">Akash Koneti</a>
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="./assets/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
-        <ul class="right">
-          <li class="right">
-            <a href="" target="_blank" class="fa fa-linkedin-square fa-2x waves-effect waves-light"><span class="icon-text"></span></a>
-          </li>
-          <li class="right">
-            <a href="" target="_blank" class="fa fa-github-square fa-2x waves-effect waves-light"><span class="icon-text"></span></a>
-          </li>
-        </ul>
+  <!-- LEFT: PROFILE CARD -->
+  <aside class="profile-card">
+    <div class="meta">
+      <img class="avatar" alt="Avatar" src="./assets/images/profilepic.jpg">
+      <div>
+        <h3>Akash Koneti</h3>
+        <p>Data Science | ML | Computer Vision</p>
       </div>
-    </nav>
-  </header>
-
-  <main class="valign-wrapper">
-    <span class="container grey-text text-lighten-1 ">
-      <p class="flow-text">Coming Soon..</p>
-      
-      <h1 class="title grey-text text-lighten-3">Akash's Portfolio</h1>
-      
-      <h5 class="grey-text text-lighten-1" 
-          style="letter-spacing:1px; font-weight:500; margin-top:10px;">
-        Data Science | Machine Learning | Artificial Intelligence
-      </h5>
-      
-      <blockquote class="flow-text">
-        Discover <strong>About Me</strong>, explore my <strong>Projects</strong>, read my <strong>Blogs</strong> — stay tuned.
-      </blockquote>
-    </span>
-  </main>
-
-
-  <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">&copy; 2025 Akash Koneti</div>
     </div>
-  </footer>
+    <div class="stats">
+      <div class="stat">
+        <div>15+</div>
+        <div>Projects Completed</div>
+      </div>
+      <div class="stat">
+        <div>25</div>
+        <div>Skills Mastered</div>
+      </div>
+      <div class="stat">
+        <div>3</div>
+        <div>Years Experience</div>
+      </div>
+    </div>
+  </aside>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <!-- RIGHT: HERO TEXT -->
+  <div class="hero-text">
+    <h1>
+      Empowering decisions through sust<span style="color:#f5d300;font-weight:700;">AI</span>nable data science.
+    </h1>
+    <p>
+      I build end-to-end ML pipelines, interactive dashboards, and reproducible
+      experiments that help teams make data-driven decisions.
+    </p>
+    <div class="ctas">
+      <a href="#" class="btn">See Projects</a>
+      <a href="#" class="btn ghost">Contact Me</a>
+    </div>
+  </div>
+</section>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('nav ul');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
+
 </body>
-
 </html>
