@@ -1,0 +1,122 @@
+.featured-projects {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+/* Yellow Header Bar */
+.projects-header {
+  background-color: #ffcc00; /* yellow */
+  text-align: center;
+  padding: 80px 20px 120px 20px; /* added extra padding-bottom */
+}
+
+.projects-header h2 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.projects-header p {
+  color: #333;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Project Grid */
+.projects-grid {
+  width: 80%;
+  max-width: 1000px;
+  background: #fff;
+  margin: -60px auto 0 auto; /* overlap yellow header */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+
+/* Project Card with border animation */
+.project-card {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border: 1px solid lightgray;
+  transition: all 0.3s ease;
+}
+
+/* Left border */
+.project-card .left-border {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  height: 0;
+  background: #000;
+  transition: all 0.4s ease;
+}
+
+/* Right border */
+.project-card .right-border {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: #000;
+  transition: all 0.4s ease;
+}
+
+.project-card::before,
+.project-card::after,
+.project-card span::before,
+.project-card span::after {
+  content: '';
+  position: absolute;
+  background: #000;
+  transition: all 0.4s ease;
+}
+
+.project-card::before { /* top border */
+  top: 0; left: 0; width: 0%; height: 2px;
+}
+.project-card::after { /* bottom border */
+  bottom: 0; right: 0; width: 0%; height: 2px;
+}
+.project-card span::before { /* left border */
+  left: 0; bottom: 0; width: 2px; height: 0%;
+}
+.project-card span::after { /* right border */
+  right: 0; top: 0; width: 2px; height: 0%;
+}
+.project-card:hover .left-border { height: 100%; }
+.project-card:hover .right-border { height: 100%; }
+
+.project-card:hover::before { width: 100%; }
+.project-card:hover::after { width: 100%; }
+.project-card:hover span::before { height: 100%; }
+.project-card:hover span::after { height: 100%; }
+
+/* Image */
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Text */
+.project-card h3 {
+  margin-top: 10px;
+  color: #000;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  color: #555;
+  font-size: 1rem;
+}
