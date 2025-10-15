@@ -35,6 +35,32 @@
   color: #333;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0077b5; /* LinkedIn blue */
+  transform: scale(1.2);
+}
+
+.social-links a:nth-child(1):hover {
+  color: #000; /* GitHub black */
+}
+
+.social-links a:nth-child(3):hover {
+  color: #d44638; /* Gmail red */
+}
+
 /* Responsive adjustments */
 @media(max-width:768px) {
   .about {
