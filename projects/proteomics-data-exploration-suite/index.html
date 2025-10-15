@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proteomic Data Exploration Suite</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-9">
+          <h1 class="brand-title h3 mb-0">Proteomic Data Exploration Suite</h1>
+          <p class="lead mb-2"><p class="section-sub">This featured project demonstrates advanced proteomics data analysis using interactive
+                  Shiny visualizations. It includes PCA analysis, clustering, linear regression tests, statistical
+                  significance analysis, and visualization of p-values. The goal is to provide an interactive experience for
+                  exploring the relationships between proteins and gene expression levels, highlighting significant findings.
+                </p>
+                        <!-- Author & Website Links -->
+        <p class="mb-2 medium">
+          <strong>Author:</strong> Akash Koneti &nbsp;|&nbsp;
+          <a href="https://akashkoneti.github.io" target="_blank" style=" text-decoration:underline;">Portfolio Website</a>
+        </p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container my-5">
+    <div class="row">
+      <div class="col-12">
+
+
+
+        <!-- Interactive demo: Chart.js and iframe -->
+        <section id="demo" class="card-ghost mt-4">
+          <h4 class="section-title">Interactive plot demos</h4>
+
+          <ul class="nav nav-tabs" id="demoTabs" role="tablist">
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-plot="volcano_plot.html" type="button" role="tab">Volcano</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-plot="regression_plot.html" type="button" role="tab">Regression</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-plot="scatter_plot.html" type="button" role="tab">Scatter</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-plot="histogram_plot.html" type="button" role="tab">Histogram</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-plot="pca_plot.html" type="button" role="tab">PCA</button>
+            </li>
+          </ul>
+
+          <!-- Single iframe -->
+          <div class="iframe-wrapper mt-3">
+            <iframe id="plotFrame" src="plots/volcano_plot.html" title="Interactive Plot"></iframe>
+          </div>
+
+
+        </section>
+
+        <script>
+          // === Dynamic iframe loader ===
+          document.querySelectorAll('#demoTabs .nav-link').forEach(btn => {
+            btn.addEventListener('click', () => {
+              document.querySelectorAll('#demoTabs .nav-link').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+
+              const plotFile = btn.getAttribute('data-plot');
+              const iframe = document.getElementById('plotFrame');
+              iframe.src = `plots/${plotFile}`;
+            });
+          });
+        </script>
+        
+
+       
+
+        <section class="analysis-section container my-5">
+          <h2>Analysis Highlights</h2>
+          <div class="feature-list">
+            <div class="feature-item">
+              <h4>Normalization</h4>
+              <p>Normalization methods are applied to make samples comparable and remove batch effects.</p>
+            </div>
+            <div class="feature-item">
+              <h4>Identifying Differentially Expressed Proteins</h4>
+              <p>Statistical tests are used to find proteins with significant changes in abundance between groups (e.g.,
+                diseased vs healthy).</p>
+            </div>
+            <div class="feature-item">
+              <h4>T-tests</h4>
+              <p>Student's t-test or moderated t-tests (e.g., limma package) are applied to compare protein abundance
+                between two groups.</p>
+            </div>
+            <div class="feature-item">
+              <h4>ANOVA</h4>
+              <p>Extends t-tests to compare more than two groups or experiments with multiple factors and interactions.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Fold Change Analysis</h4>
+              <p>Measures the ratio of protein abundance between two conditions, often visualized alongside p-values.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Volcano Plots</h4>
+              <p>Combines fold change and statistical significance to highlight potential differentially expressed
+                proteins.</p>
+            </div>
+            <div class="feature-item">
+              <h4>Multiple Testing Correction</h4>
+              <p>Methods like FDR, Benjamini-Hochberg procedure, and Q-values are applied to control false positives.
+              </p>
+            </div>
+            <div class="feature-item">
+              <h4>Multivariate Analysis</h4>
+              <p>PCA, clustering, and machine learning methods (Random Forest, SVM, Elastic Net) are applied for feature
+                selection and predictive modeling.</p>
+            </div>
+          </div>
+        </section>
+
+ <!-- Screenshot -->
+        <section class="card-ghost mt-4">
+          <h4 class="section-title">Suite screenshot</h4>
+          <img src="./Proteomics Data Exploration Suite.png" class="img-fluid rounded"
+            alt="Suite screenshot">
+        </section>
+        <section class="mt-5">
+  <h2 class="sectionb-heading">Data Science Concepts Demonstrated</h2>
+
+  <!-- Platform Overview -->
+  <section class="section-block">
+    <h3>Platform Overview</h3>
+    <ul>
+      <li>Built with R Shiny & Plotly for interactive visualizations</li>
+      <li>Modular, tab-based UI for clean organization</li>
+      <li>Exportable plots as standalone HTML for reproducibility</li>
+    </ul>
+  </section>
+
+  <!-- Data Preprocessing -->
+  <section class="section-block">
+    <h3>Data Preprocessing</h3>
+    <ul>
+      <li>Filtering missing or zero values</li>
+      <li>Log₂ transformation for normalization</li>
+      <li>Reactive updates for instant plot rendering</li>
+      <li>Clear separation of filtering, plotting, and rendering logic</li>
+    </ul>
+  </section>
+
+  <!-- Analytical Concepts -->
+  <section class="section-block">
+    <h3>Analytical Concepts</h3>
+    <ul>
+      <li>Univariate analysis via histograms</li>
+      <li>Bivariate analysis with scatter & regression plots</li>
+      <li>Outlier detection using Volcano plots</li>
+      <li>Multivariate structure detection with PCA</li>
+    </ul>
+  </section>
+
+  <!-- Statistical Techniques -->
+  <section class="section-block">
+    <h3>Statistical Techniques</h3>
+    <ul>
+      <li>Linear regression (lm) with R² assessment</li>
+      <li>Hypothesis testing (p-values)</li>
+      <li>Fold change & log-scale visualizations</li>
+      <li>Multiple testing visualization</li>
+    </ul>
+  </section>
+
+  <!-- Visualization & Interpretation -->
+  <section class="section-block">
+    <h3>Visualization & Interpretation</h3>
+    <table class="table table-sm mb-0">
+      <thead>
+        <tr><th>Visualization</th><th>Concept</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Volcano Plot</td><td>Differential Expression</td></tr>
+        <tr><td>Regression Plot</td><td>Correlation Analysis</td></tr>
+        <tr><td>Histogram</td><td>Distribution Analysis</td></tr>
+        <tr><td>Scatter Plot</td><td>Cross-modality Correlation</td></tr>
+        <tr><td>PCA Plot</td><td>Dimensionality Reduction</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Key Skills Highlighted -->
+  <section class="section-block">
+    <h3>Key Skills Highlighted</h3>
+    <ul>
+      <li>Interactive dashboards with R Shiny</li>
+      <li>Dynamic visualizations with Plotly</li>
+      <li>Data preprocessing, cleaning, and transformation</li>
+      <li>Statistical analysis (regression, hypothesis testing)</li>
+      <li>Dimensionality reduction & multivariate analysis (PCA)</li>
+      <li>Reproducibility: saving interactive plots & structured pipeline</li>
+    </ul>
+  </section>
+</section>
+
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="container text-center">
+    <small>Proteomic Data Exploration Suite — Built with R &amp; Shiny • Developed by Akash Koneti • <a href="https://akashkoneti.github.io" target="_blank" style=" text-decoration:underline;">Portfolio Website</a></small>
+  </footer>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // --- Utility: random normal (Box-Muller) ---
+    function randn(mu = 0, sigma = 1) {
+      const u1 = Math.random() || 1e-10;
+      const u2 = Math.random();
+      const z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
+      return z0 * sigma + mu;
+    }
+
+    // --- PCA chart: synthetic dataset ---
+    (function createPCA() {
+      const ctx = document.getElementById('pcaChart').getContext('2d');
+
+      // Generate two groups with slight separation
+      const groupA = Array.from({ length: 30 }, () => ({ x: randn(-1.2, 0.95), y: randn(0.1, 0.9) }));
+      const groupB = Array.from({ length: 30 }, () => ({ x: randn(1.6, 0.95), y: randn(1.1, 0.9) }));
+
+      const data = {
+        datasets: [
+          { label: 'Group A', data: groupA, pointRadius: 5, pointHoverRadius: 7, backgroundColor: 'rgba(15,76,129,0.9)' },
+          { label: 'Group B', data: groupB, pointRadius: 5, pointHoverRadius: 7, backgroundColor: 'rgba(15,76,129,0.45)' }
+        ]
+      };
+
+      const pcaChart = new Chart(ctx, {
+        type: 'scatter',
+        data,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom' },
+            tooltip: { mode: 'nearest' }
+          },
+          scales: {
+            x: { title: { display: true, text: 'PC1' }, grid: { color: 'rgba(15,76,129,0.03)' } },
+            y: { title: { display: true, text: 'PC2' }, grid: { color: 'rgba(15,76,129,0.03)' } }
+          }
+        }
+      });
+
+      // Export PNG from Chart
+      document.getElementById('exportPngBtn').addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = pcaChart.toBase64Image();
+        link.download = 'pca-plot.png';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
+    })();
+
+
+
+    // Accessibility: ensure first tab focus on show
+    const tabEl = document.querySelectorAll('#demoTabs button[data-bs-toggle="tab"]');
+    tabEl.forEach(btn => btn.addEventListener('shown.bs.tab', (e) => e.target.focus()));
+  </script>
+</body>
+
+</html>
