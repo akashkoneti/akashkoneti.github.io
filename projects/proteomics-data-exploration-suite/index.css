@@ -1,76 +1,60 @@
-    :root{
-      --brand-1: #0f4c81; /* deep blue */
-      --muted: #6c757d;
-      --surface: #ffffff;
-      --bg: #f5f7fa;
-      --card-shadow: 0 8px 24px rgba(15,76,129,0.04);
-      --radius: 12px;
-    }
-
-    html,body{height:100%}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: var(--bg);
-      color: #0d2538;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      font-size:15px;
-      line-height:1.45;
-    }
-
-    /* HERO */
-    .hero{
-      background: linear-gradient(90deg, rgba(15,76,129,0.06), rgba(15,76,129,0.03));
-      padding: 2.2rem 1rem;
-      border-bottom: 1px solid rgba(15,76,129,0.04);
-    }
-    .brand-title{font-weight:700; color:var(--brand-1); letter-spacing:0.2px; margin-bottom:0.15rem}
-    .hero .lead{color: #234; opacity:0.9; margin-bottom:1rem}
-    .hero .logo-wrap img{width:140px; height:auto; border-radius:8px; border:1px solid rgba(15,76,129,0.06)}
-
-    /* Container cards */
-    .card-ghost{
-      background:var(--surface); border-radius:var(--radius);
-      padding:1.25rem; box-shadow:var(--card-shadow); border:1px solid rgba(15,76,129,0.04);
-    }
-    section + section{margin-top:1.25rem}
-
-/* ============================
-   Section Headings Style
-   ============================ */
-
-.section-title,
-section h4 {
-  color: #1f77b4;                /* Blue title text */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #2ca02c; /* Green underline */
-  padding-bottom: 0.5rem;
-
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  font-weight: bold;
+:root {
+  --brand-1: #0f4c81;
+  --muted: #6c757d;
+  --surface: #ffffff;
+  --bg: #f5f7fa;
+  --card-shadow: 0 8px 24px rgba(15, 76, 129, 0.04);
+  --radius: 12px;
 }
- .section-sub{font-size:0.92rem; color:var(--muted); margin-bottom:0.8rem}
 
-/* Section heading style (your preferred one) */
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: #0d2538;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(90deg, rgba(15, 76, 129, 0.06), rgba(15, 76, 129, 0.03));
+  padding: 2rem 1rem;
+  border-bottom: 1px solid rgba(15, 76, 129, 0.04);
+}
+
+.brand-title {
+  font-weight: 700;
+  color: var(--brand-1);
+  letter-spacing: 0.2px;
+}
+
+.section-sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+/* CARD */
+.card-ghost {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(15, 76, 129, 0.04);
+}
+
+/* SECTION TITLES */
+.section-title,
 .analysis-section h2 {
   color: #1f77b4;
   margin-bottom: 1rem;
   border-bottom: 2px solid #2ca02c;
   padding-bottom: 0.5rem;
-
   font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
   font-weight: bold;
 }
 
-/* Feature card layout */
+/* FEATURE LIST */
 .feature-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -78,7 +62,6 @@ section h4 {
   margin-top: 1.5rem;
 }
 
-/* Individual cards */
 .feature-item {
   background: linear-gradient(180deg, #ffffff, #f9fbfd);
   border: 1px solid rgba(15, 76, 129, 0.15);
@@ -94,52 +77,53 @@ section h4 {
   border-color: #1e90ff;
 }
 
-/* Card headings */
 .feature-item h4 {
   color: #0f4c81;
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  border-bottom: none
 }
 
-/* Card text */
-.feature-item p {
-  color: #123;
-  font-size: 0.95rem;
-  line-height: 1.5;
+/* IFRAME WRAPPER */
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 76, 129, 0.04);
+  box-shadow: 0 6px 18px rgba(15, 76, 129, 0.03);
+  background: #fff;
 }
 
+.iframe-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
-
-    /* Tabs */
-    .nav-tabs .nav-link{ color:var(--brand-1); border:1px solid rgba(15,76,129,0.06); border-bottom:none; margin-right:0.35rem; border-radius:8px 8px 0 0; padding:0.5rem 0.85rem; font-weight:600; }
-    .nav-tabs .nav-link.active{ background:var(--surface); color:var(--brand-1); box-shadow:0 6px 18px rgba(15,76,129,0.04); }
-    .iframe-wrapper{position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; border:1px solid rgba(15,76,129,0.04); box-shadow:0 6px 18px rgba(15,76,129,0.03); background:#fff}
-
-    .iframe-wrapper iframe{position:absolute; inset:0; width:100%; height:100%; border-radius:8px; border:0}
-
-    /* Table */
-    .table-card{overflow:auto; border-radius:8px}
-
-
-    footer{padding:1.75rem 0; color:var(--muted); border-top:1px solid rgba(15,76,129,0.03); margin-top:2rem; background:transparent}
-
-    @media (max-width:767px){
-      .nav-tabs .nav-link{ padding:0.45rem 0.6rem; margin-bottom:0.25rem}
-      .hero{padding:1.25rem}
-      .logo-wrap img{width:120px}
-    }
+/* SECTION BLOCKS */
 .section-block {
-    margin-bottom: 2rem;
-    padding: 1rem 1.5rem;
-    background: #fdfdfd;
-    border-left: 4px solid var(--brand-2);
-    border-radius: 6px;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: #fdfdfd;
+  border-left: 4px solid var(--brand-1);
+  border-radius: 6px;
 }
 
 .section-block h3 {
-    color: var(--brand-1);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+  color: var(--brand-1);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+  padding: 1.75rem 0;
+  color: var(--muted);
+  border-top: 1px solid rgba(15, 76, 129, 0.03);
+  margin-top: 2rem;
+  text-align: center;
 }
