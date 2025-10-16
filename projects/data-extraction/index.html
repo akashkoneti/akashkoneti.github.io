@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Extraction & Automation Portfolio | Akash Koneti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9d5df66.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f7f9fb;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(120deg, #4a6cf7, #6574ff);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .project {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .project h2 {
+      color: #3248e5;
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+    }
+    .project h3 {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    .project p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 0.6rem;
+    }
+    .project ul {
+      margin: 0.5rem 0 0.8rem;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+    }
+    .badge {
+      background: #e9ebff;
+      color: #3248e5;
+      border-radius: 12px;
+      padding: 4px 10px;
+      margin-right: 5px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      background: #f0f1f8;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Data Extraction & Automation Projects</h1>
+    <p>End-to-end data pipelines, intelligent scraping systems, and structured data automation — fully designed and implemented by me.</p>
+  </header>
+
+  <section>
+
+    <div class="project">
+      <h2>1. FCC DTV Data Extraction</h2>
+      <p><b>Site:</b> FCC DTV Maps Portal</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Developed a fully asynchronous pipeline using <b>AsyncIO</b> and <b>aiohttp</b> to process 40,000+ ZIP codes in parallel.</li>
+        <li>Built retry logic, adaptive rate limiting, and <b>header randomization</b> to avoid API throttling.</li>
+        <li>Implemented checkpoint-based resume for large runs and progress logging.</li>
+        <li>Exported final structured results into CSV and JSON for further modeling.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">AsyncIO</span>
+        <span class="badge">aiohttp</span>
+        <span class="badge">pandas</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>2. Wayback Machine WordPress Extractor</h2>
+      <p><b>Site:</b> Archived WordPress HTML Snapshots (2020–2024)</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Created parsers using <b>BeautifulSoup</b> and <b>lxml</b> to extract titles, categories, tags, and content.</li>
+        <li>Wrote cleanup functions to handle incomplete or corrupted HTML files.</li>
+        <li>Automated conversion of extracted posts into a <b>WordPress WXR XML</b> importable format.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">BeautifulSoup</span>
+        <span class="badge">lxml</span>
+        <span class="badge">XML</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>3. Emergency Department Live Data & Alerts</h2>
+      <p><b>Site:</b> Regional Hospital Dashboards</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Automated scraping of live ED data using <b>Selenium</b> in headless mode.</li>
+        <li>Set up alert triggers and auto-posting to <b>Twitter API v2</b> via Tweepy.</li>
+        <li>Developed logic for polling intervals and real-time threshold detection.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Selenium</span>
+        <span class="badge">Tweepy</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>4. iBefflora Botanical Scraper</h2>
+      <p><b>Site:</b> iBefflora Plant Database</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Used <b>Playwright (async)</b> to handle JavaScript-rendered taxonomy pages.</li>
+        <li>Built concurrent extraction of plant families and species with <b>AsyncIO</b>.</li>
+        <li>Added data deduplication, retry logic, and randomized user-agent headers.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Playwright</span>
+        <span class="badge">AsyncIO</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>5. Feria Valencia Exhibitor Scraper</h2>
+      <p><b>Site:</b> Feria Valencia Exhibitor Listings</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Automated data collection using <b>Playwright</b> for infinite-scroll content.</li>
+        <li>Developed pagination handling, proxy rotation, and dynamic delay scheduling.</li>
+        <li>Structured final outputs with exhibitor, booth, and contact data.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Playwright</span>
+        <span class="badge">Proxy Rotation</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>6. Zillow Real Estate Agent Extractor</h2>
+      <p><b>Site:</b> Zillow Agent Directory</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Designed a <b>Selenium automation</b> to navigate paginated agent listings.</li>
+        <li>Integrated <b>proxy and header rotation</b> to bypass Cloudflare detection.</li>
+        <li>Added checkpoint-based data saving for long sessions.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Selenium</span>
+        <span class="badge">ProxyMesh</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>7. ICD-10 Medical Code Extractor</h2>
+      <p><b>Site:</b> WHO ICD-10 Database</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Built recursive logic to parse hierarchical ICD code structures.</li>
+        <li>Flattened nested data into normalized tabular format using pandas.</li>
+        <li>Optimized runtime by replacing recursion with iterative generators.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Requests</span>
+        <span class="badge">Regex</span>
+        <span class="badge">pandas</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>8. Telkomsel Product Data Scraper</h2>
+      <p><b>Site:</b> Telkomsel Telecom Website</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Automated plan and pricing extraction using <b>Playwright</b>.</li>
+        <li>Implemented async session handling and retry queue for failed requests.</li>
+        <li>Built rate-limit aware scheduler using <b>asyncio.sleep()</b>.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Playwright</span>
+        <span class="badge">AsyncIO</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>9. Election Results Data Extraction</h2>
+      <p><b>Site:</b> State and National Election Dashboards</p>
+      <h3>My Implementations</h3>
+      <ul>
+        <li>Combined <b>Playwright</b> (for JS pages) with <b>Requests</b> (for backend APIs).</li>
+        <li>Built asynchronous data pipeline to fetch multiple constituencies in parallel.</li>
+        <li>Added dynamic rate-limiting, rotating headers, and auto-resume checkpoints.</li>
+      </ul>
+      <div>
+        <span class="badge">Python</span>
+        <span class="badge">Playwright</span>
+        <span class="badge">Requests</span>
+        <span class="badge">AsyncIO</span>
+      </div>
+    </div>
+
+  </section>
+<div class="project">
+  <h2>10. PDF Data Extraction & Report Generation</h2>
+  <p><b>Source:</b> Structured and semi-structured PDFs from client datasets</p>
+  <h3>My Implementations</h3>
+  <ul>
+    <li>Built a parser using <b>PyPDF2</b> and <b>pdfplumber</b> to extract tabular and textual data.</li>
+    <li>Developed logic to dynamically clean, normalize, and structure the extracted content.</li>
+    <li>Integrated with <b>Plotly</b> to generate interactive charts and automatically embed them into PDF reports.</li>
+    <li>Automated PDF generation pipeline with <b>pdfkit</b>, including templates and dynamic styling.</li>
+  </ul>
+  <div>
+    <span class="badge">Python</span>
+    <span class="badge">PyPDF2</span>
+    <span class="badge">pdfplumber</span>
+    <span class="badge">Plotly</span>
+    <span class="badge">pdfkit</span>
+  </div>
+</div>
+
+  <footer>
+    © 2025 Akash Koneti — All Rights Reserved
+  </footer>
+
+</body>
+</html>
