@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proteomic Data Exploration Suite</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f7fa;
-      color: #333;
-    }
+    /* === Updated Style for Consistency with Data Extraction Portfolio === */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fb;
+  color: #222;
+}
+
+/* --- Header --- */
 header {
-  background: linear-gradient(90deg, #1f77b4, #2ca02c);
+  background: linear-gradient(120deg, #4a6cf7, #6574ff);
   color: white;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -25,6 +31,12 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
 }
 
 .main-nav ul {
@@ -37,31 +49,25 @@ header {
   justify-content: center;
 }
 
-.main-nav li {
-  display: inline-block;
-}
-
 .main-nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.3rem 0.5rem;
-  transition: all 0.3s;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.3s ease;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .main-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffeb99;
+  background-color: rgba(255,255,255,0.2);
+  color: #ffed76;
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Responsive menu */
 @media (max-width: 768px) {
   .main-nav ul {
     flex-direction: column;
@@ -69,82 +75,107 @@ html {
   }
 }
 
-    section {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section h2 {
-      color: #1f77b4;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #2ca02c;
-      padding-bottom: 0.5rem;
-    }
-    section p {
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-    .feature-item {
-      background-color: white;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .feature-item h4 {
-      color: #2ca02c;
-      margin-top: 0;
-    }
-    .plot-container {
-      margin: 2rem 0;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      background-color: white;
-      border-radius: 8px;
-    }
+/* --- Sections --- */
+section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+section h2 {
+  color: #3248e5;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #6574ff;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+section p {
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* --- Feature Cards --- */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(74,108,247,0.2);
+}
+
+.feature-item h4 {
+  color: #3248e5;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+/* --- Plot Container --- */
+.plot-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 2rem 0;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.plot-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(74,108,247,0.15);
+}
+
+.plot-container h3 {
+  color: #3248e5;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.plot-container p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
 .plot-container iframe {
-  width: 70%; /* Desktop width */
-  max-width: 900px; /* Optional: limits extremely large screens */
+  width: 70%;
+  max-width: 900px;
   height: 600px;
   border: none;
   border-radius: 8px;
   display: block;
-  margin: 0 auto; /* Centers the iframe */
+  margin: 1rem auto;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
   .plot-container iframe {
     width: 100%;
-    height: 400px; /* Optional: reduce height for smaller screens */
+    height: 400px;
   }
 }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #1f77b4;
-      color: white;
-      margin-top: 2rem;
-    }
-    a {
-      color: #ebff37;
-      text-decoration: none;
-    }
-   .skills-row {
+/* --- Skills Row --- */
+.skills-row {
   display: flex;
   align-items: center;
   gap: 2rem;
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 1rem;
-  flex-wrap: wrap; /* makes it responsive on small screens */
+  flex-wrap: wrap;
 }
 
 .skills-row-image {
@@ -154,19 +185,25 @@ html {
 
 .skills-row-image img {
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.skills-row-image img:hover {
+  transform: scale(1.02);
 }
 
 .skills-row-content {
   flex: 1 1 400px;
 }
 
-.skills-row-content h2 {
-  color: #1f77b4;
-  border-bottom: 2px solid #2ca02c;
+.skills-row-content h3 {
+  color: #3248e5;
+  border-bottom: 2px solid #6574ff;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 .skills-list {
@@ -183,141 +220,158 @@ html {
 }
 
 .skills-list li::before {
-  content: "•"; /* bullet */
+  content: "•";
   position: absolute;
   left: 0;
-  color: #2ca02c;
-  font-size: 1.2rem;
+  color: #6574ff;
+  font-size: 1.3rem;
 }
 
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f1f8;
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #3248e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #6574ff;
+}
 
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-container">
-    <h1>Proteomic Data Exploration Suite</h1>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#overview">Overview</a></li> |
-        <li><a href="#analysis">Analysis Highlights</a></li> |
-        <li><a href="#visualizations">Interactive Visualizations</a></li>
+  <header>
+    <div class="header-container">
+      <h1>Proteomic Data Exploration Suite</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#overview">Overview</a></li> |
+          <li><a href="#analysis">Analysis Highlights</a></li> |
+          <li><a href="#visualizations">Interactive Visualizations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <section id="overview">
+    <h2>Project Overview</h2>
+    <p>
+      This project demonstrates advanced data analysis techniques applied to proteomics and mRNA datasets.
+      It includes PCA analysis, clustering, linear regression tests, statistical significance analysis, and
+      visualization of p-values.
+      The goal is to provide an interactive experience for exploring the relationships between proteins and gene
+      expression levels, highlighting significant findings.
+    </p>
+
+  </section>
+
+  <section class="skills-row">
+    <div class="skills-row-image">
+      <img src="./Proteomics Data Exploration Suite.png" alt="Proteomics Dashboard" />
+    </div>
+    <div class="skills-row-content">
+      <h3>Key Skills Highlighted</h3>
+      <ul class="skills-list">
+        <li> Interactive dashboards with R Shiny</li>
+        <li> Dynamic visualizations with Plotly</li>
+        <li> Data preprocessing, cleaning, and transformation</li>
+        <li> Statistical analysis (regression, hypothesis testing)</li>
+        <li> Dimensionality reduction & multivariate analysis (PCA)</li>
+        <li> Reproducibility: saving interactive plots & structured pipeline</li>
       </ul>
-    </nav>
-  </div>
-</header>
-
-
-<section id="overview">
-  <h2>Project Overview</h2>
-  <p>
-    This project demonstrates advanced data analysis techniques applied to proteomics and mRNA datasets.
-    It includes PCA analysis, clustering, linear regression tests, statistical significance analysis, and visualization of p-values.
-    The goal is to provide an interactive experience for exploring the relationships between proteins and gene expression levels, highlighting significant findings.
-  </p>
-
-</section>
-
-<section class="skills-row">
-  <div class="skills-row-image">
-    <img src="./Proteomics Data Exploration Suite.png" alt="Proteomics Dashboard" />
-  </div>
-  <div class="skills-row-content">
-    <h3>Key Skills Highlighted</h3>
-    <ul class="skills-list">
-      <li> Interactive dashboards with R Shiny</li>
-      <li> Dynamic visualizations with Plotly</li>
-      <li> Data preprocessing, cleaning, and transformation</li>
-      <li> Statistical analysis (regression, hypothesis testing)</li>
-      <li> Dimensionality reduction & multivariate analysis (PCA)</li>
-      <li> Reproducibility: saving interactive plots & structured pipeline</li>
-    </ul>
-  </div>
-</section>
-<section id="analysis">
-  <h2>Analysis Highlights</h2>
-  <div class="feature-list">
-    <div class="feature-item">
-      <h4>Normalization</h4>
-      <p>Normalization methods are applied to make samples comparable and remove batch effects.</p>
     </div>
-    <div class="feature-item">
-      <h4>Identifying Differentially Expressed Proteins</h4>
-      <p>Statistical tests are used to find proteins with significant changes in abundance between groups (e.g., diseased vs healthy).</p>
+  </section>
+
+  <section id="analysis">
+    <h2>Analysis Highlights</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h4>Normalization</h4>
+        <p>Normalization methods are applied to make samples comparable and remove batch effects.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Identifying Differentially Expressed Proteins</h4>
+        <p>Statistical tests are used to find proteins with significant changes in abundance between groups (e.g.,
+          diseased vs healthy).</p>
+      </div>
+      <div class="feature-item">
+        <h4>T-tests</h4>
+        <p>Student's t-test or moderated t-tests (e.g., limma package) are applied to compare protein abundance between
+          two groups.</p>
+      </div>
+      <div class="feature-item">
+        <h4>ANOVA</h4>
+        <p>Extends t-tests to compare more than two groups or experiments with multiple factors and interactions.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Fold Change Analysis</h4>
+        <p>Measures the ratio of protein abundance between two conditions, often visualized alongside p-values.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Volcano Plots</h4>
+        <p>Combines fold change and statistical significance to highlight potential differentially expressed proteins.
+        </p>
+      </div>
+      <div class="feature-item">
+        <h4>Multiple Testing Correction</h4>
+        <p>Methods like FDR, Benjamini-Hochberg procedure, and Q-values are applied to control false positives.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Multivariate Analysis</h4>
+        <p>PCA, clustering, and machine learning methods (Random Forest, SVM, Elastic Net) are applied for feature
+          selection and predictive modeling.</p>
+      </div>
     </div>
-    <div class="feature-item">
-      <h4>T-tests</h4>
-      <p>Student's t-test or moderated t-tests (e.g., limma package) are applied to compare protein abundance between two groups.</p>
+  </section>
+
+  <section id="visualizations">
+    <h2>Interactive Visualizations</h2>
+
+    <div class="plot-container">
+      <h3>1. Volcano Plot</h3>
+      <p>Highlighting significant proteins based on fold change and p-values.</p>
+      <iframe src="./plots/Volcano_Plot.html"></iframe>
     </div>
-    <div class="feature-item">
-      <h4>ANOVA</h4>
-      <p>Extends t-tests to compare more than two groups or experiments with multiple factors and interactions.</p>
+
+    <div class="plot-container">
+      <h3>2. Regression Plot</h3>
+      <p>Log2 regression analysis between proteome and transcriptome columns with R² metrics.</p>
+      <iframe src="./plots/Regression_Plot.html"></iframe>
     </div>
-    <div class="feature-item">
-      <h4>Fold Change Analysis</h4>
-      <p>Measures the ratio of protein abundance between two conditions, often visualized alongside p-values.</p>
+
+    <div class="plot-container">
+      <h3>3. Histogram Plot</h3>
+      <p>Distribution analysis of selected proteome and transcriptome columns.</p>
+      <iframe src="./plots/Histogram_Plot.html"></iframe>
     </div>
-    <div class="feature-item">
-      <h4>Volcano Plots</h4>
-      <p>Combines fold change and statistical significance to highlight potential differentially expressed proteins.</p>
+
+    <div class="plot-container">
+      <h3>4. Scatter Plot</h3>
+      <p>Fold change scatter plot with threshold-based highlighting of proteins.</p>
+      <iframe src="./plots/Scatter_Plot.html"></iframe>
     </div>
-    <div class="feature-item">
-      <h4>Multiple Testing Correction</h4>
-      <p>Methods like FDR, Benjamini-Hochberg procedure, and Q-values are applied to control false positives.</p>
+
+    <div class="plot-container">
+      <h3>5. PCA Plot</h3>
+      <p>Principal Component Analysis showing sample clustering and variation across conditions.</p>
+      <iframe src="./plots/PCA_Plot.html"></iframe>
     </div>
-    <div class="feature-item">
-      <h4>Multivariate Analysis</h4>
-      <p>PCA, clustering, and machine learning methods (Random Forest, SVM, Elastic Net) are applied for feature selection and predictive modeling.</p>
-    </div>
-  </div>
-</section>
 
-<section id="visualizations">
-  <h2>Interactive Visualizations</h2>
-
-  <div class="plot-container">
-    <h3>1. Volcano Plot</h3>
-    <p>Highlighting significant proteins based on fold change and p-values.</p>
-    <iframe src="plots/Volcano_Plot.html"></iframe>
-  </div>
-
-  <div class="plot-container">
-    <h3>2. Regression Plot</h3>
-    <p>Log2 regression analysis between proteome and transcriptome columns with R² metrics.</p>
-    <iframe src="plots/Regression_Plot.html"></iframe>
-  </div>
-
-  <div class="plot-container">
-    <h3>3. Histogram Plot</h3>
-    <p>Distribution analysis of selected proteome and transcriptome columns.</p>
-    <iframe src="plots/Histogram_Plot.html"></iframe>
-  </div>
-
-  <div class="plot-container">
-    <h3>4. Scatter Plot</h3>
-    <p>Fold change scatter plot with threshold-based highlighting of proteins.</p>
-    <iframe src="plots/Scatter_Plot.html"></iframe>
-  </div>
-
-  <div class="plot-container">
-    <h3>5. PCA Plot</h3>
-    <p>Principal Component Analysis showing sample clustering and variation across conditions.</p>
-    <iframe src="plots/PCA_Plot.html"></iframe>
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-<footer>
-  <p>Created by <strong>Akash Koneti</strong> | <a href="https://akashkoneti.github.io">Portfolio</a></p>
-</footer>
+  </section>
 
 </body>
+
 </html>

@@ -160,3 +160,77 @@
   color: #ffffff;
   font-weight: 600;
 }
+
+
+#projectModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* scrollable */
+  background-color: rgba(0,0,0,0.5);
+}
+#modal-body {
+  max-width: 90%;
+  margin: 100px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 3% auto;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;           /* Make modal wider */
+  max-width: 1200px;    /* Increase maximum width */
+  box-shadow: 0 6px 35px rgba(0, 0, 0, 0.35);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  overflow-y: auto;
+  max-height: 90vh;     /* Ensure it fits smaller screens */
+}
+
+.close-btn {
+  position: sticky;      /* stays in view while scrolling */
+  top: 0;                /* pinned to top of modal */
+  right: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  float: right;
+  z-index: 1000;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.close-btn:hover {
+  background: #f5d300;   /* matches your theme yellow */
+  transform: scale(1.1);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -59,7 +59,8 @@
         experiments that help teams make data-driven decisions.
       </p>
       <div class="ctas">
-        <a href="#" class="btn">See Projects</a>
+        <a href="#projects" class="btn">See Projects</a>
+        <a href="#skills" class="btn btn-outline">Skills</a>
         <a href="#" class="btn ghost">Contact Me</a>
       </div>
     </div>
@@ -100,7 +101,7 @@
   </section>
 
 
-  <section class="featured-projects">
+<section class="featured-projects" id="projects">
   <div class="projects-header">
     <h2>Featured Projects</h2>
     <p>A glimpse of selected works showcasing my experience in data science, AI, and analytics.</p>
@@ -115,18 +116,18 @@
       <p>Developed an interactive data analysis suite in R using the Shiny framework. 
         It is designed for exploratory analysis of proteomics datasets, 
         integrating multiple visualization and statistical tools to help users interactively explore, compare, and interpret protein expression data.
-        </p>
+      </p>
       <div class="skills">
         <span class="pill">Python</span>
         <span class="pill">Plotly</span>
         <span class="pill">Shiny</span>
       </div>
-      <a href="./projects/proteomics-data-exploration-suite/" target="_blank" class="view-btn">Read More</a>
+      <button class="view-btn" data-project="./projects/proteomics-data-exploration-suite/index.html">Read More</button>
     </div>
 
     <div class="project-card">
       <div class="left-border"></div>
-  <div class="right-border"></div>
+      <div class="right-border"></div>
       <img src="https://picsum.photos/800/600?random=2" alt="Customer Churn Prediction">
       <h3>Customer Churn Prediction</h3>
       <p>Built a predictive model using Random Forest and Gradient Boosting to forecast customer churn and retention risk.</p>
@@ -134,7 +135,7 @@
 
     <div class="project-card">
       <div class="left-border"></div>
-  <div class="right-border"></div>
+      <div class="right-border"></div>
       <img src="https://picsum.photos/800/600?random=3" alt="Healthcare Data Insights">
       <h3>Healthcare Data Insights</h3>
       <p>Analyzed large-scale hospital datasets to uncover key metrics, patient flow, and emergency response trends.</p>
@@ -142,8 +143,8 @@
 
     <div class="project-card">
       <div class="left-border"></div>
-  <div class="right-border"></div>
-      <img src="./projects/data-extraction/data-extraction.png" alt="Computer Vision Defect Detection">
+      <div class="right-border"></div>
+      <img src="./projects/data-extraction/data-extraction.png" alt="Data Extraction Projects">
       <h3>Data Extraction Projects</h3>
       <p>A collection of data extraction projects showcasing my work in automating dynamic web scraping, API integration, and pdf data extraction. Implemented using Python with optimizations for concurrency, anti-blocking, and high-efficiency pipelines.</p>
       <div class="skills">
@@ -153,10 +154,12 @@
         <span class="pill">Playwright</span>
         <span class="pill">pdfplumber</span>
       </div>
-      <a href="./projects/data-extraction/" target="_blank" class="view-btn">Read More</a>
+      <button class="view-btn" data-project="./projects/data-extraction/index.html">Read More</button>
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -344,7 +347,17 @@
     </div>
   </div>
 </section>
+
+
 </main>
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div id="modal-body">
+      <!-- Project content will load here -->
+    </div>
+  </div>
+</div>
 <!-- Footer -->
 <footer 
   style="
@@ -368,6 +381,60 @@
     </a>
   </p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("projectModal");
+  const modalBody = document.getElementById("modal-body");
+  const closeBtn = document.querySelector(".close-btn");
+
+  function openModal(url) {
+    const basePath = url.substring(0, url.lastIndexOf("/") + 1);
+    
+    modalBody.innerHTML = "<p>Loading...</p>";
+    modal.scrollTop = 0;          // reset modal scroll
+    window.scrollTo(0, 0);        // reset page scroll (safety)
+
+    fetch(url)
+      .then(res => res.text())
+      .then(html => {
+        html = html.replace(/(src|href)=["']\.\/(.*?)["']/g, (m, attr, path) => {
+          return `${attr}="${basePath}${path}"`;
+        });
+        modalBody.innerHTML = html;
+        modal.scrollTop = 0;      // reset scroll again after content loads
+      })
+      .catch(err => {
+        console.error(err);
+        modalBody.innerHTML = "<p>Failed to load content.</p>";
+      });
+
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // prevent background scroll
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+    modalBody.innerHTML = "";
+    modal.scrollTop = 0;
+    window.scrollTo(0, 0);        // reset page scroll
+  }
+
+  document.querySelectorAll(".view-btn[data-project]").forEach(btn => {
+    btn.addEventListener("click", () => openModal(btn.getAttribute("data-project")));
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+});
+  </script>
+
+
+
+
 
 </body>
 
