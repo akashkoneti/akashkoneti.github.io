@@ -4,373 +4,613 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proteomic Data Exploration Suite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <title>Akash Koneti - Data Science Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/hero.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* === Updated Style for Consistency with Data Extraction Portfolio === */
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f9fb;
-  color: #222;
-}
-
-/* --- Header --- */
-header {
-  background: linear-gradient(120deg, #4a6cf7, #6574ff);
-  color: white;
-  padding: 2.5rem 1rem;
+ .gallery-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 60px auto;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 6rem 2rem;
 }
 
-.header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.main-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;      /* fixed width */
+  height: 450px;         /* fixed height to prevent jump */
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.3rem;
-  letter-spacing: 0.5px;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.main-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.3rem 0.6rem;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border-radius: 6px;
-}
-
-.main-nav a:hover {
-  background-color: rgba(255,255,255,0.2);
-  color: #ffed76;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (max-width: 768px) {
-  .main-nav ul {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-}
-
-/* --- Sections --- */
-section {
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-}
-
-section h2 {
-  color: #3248e5;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #6574ff;
-  padding-bottom: 0.5rem;
-  font-size: 1.5rem;
-}
-
-section p {
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-/* --- Feature Cards --- */
-.feature-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.feature-item {
-  background: #fff;
-  border-radius: 14px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(74,108,247,0.2);
-}
-
-.feature-item h4 {
-  color: #3248e5;
-  margin-top: 0;
-  margin-bottom: 0.6rem;
-  font-size: 1.1rem;
-}
-
-/* --- Plot Container --- */
-.plot-container {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin: 2rem 0;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.plot-container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(74,108,247,0.15);
-}
-
-.plot-container h3 {
-  color: #3248e5;
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.plot-container p {
-  color: #444;
-  font-size: 0.95rem;
-}
-
-.plot-container iframe {
-  width: 70%;
-  max-width: 900px;
-  height: 600px;
-  border: none;
-  border-radius: 8px;
+.main-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* maintain aspect ratio, fill container */
+  border-radius: var(--radius);
+  transition: transform 0.4s ease;
   display: block;
-  margin: 1rem auto;
 }
 
-@media (max-width: 768px) {
-  .plot-container iframe {
-    width: 100%;
-    height: 400px;
-  }
-}
 
-/* --- Skills Row --- */
-.skills-row {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-
-.skills-row-image {
-  flex: 1 1 400px;
-  text-align: center;
-}
-
-.skills-row-image img {
-  max-width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.skills-row-image img:hover {
+.main-image-container:hover img {
   transform: scale(1.02);
 }
 
-.skills-row-content {
-  flex: 1 1 400px;
-}
-
-.skills-row-content h3 {
-  color: #3248e5;
-  border-bottom: 2px solid #6574ff;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.skills-list li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.skills-list li::before {
-  content: "•";
+/* --- Centered Overlay --- */
+.main-image-container::after {
+  content: "";
   position: absolute;
-  left: 0;
-  color: #6574ff;
-  font-size: 1.3rem;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* translucent dark overlay */
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius);
 }
 
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f0f1f8;
-  color: #555;
-  font-size: 0.9rem;
-  margin-top: 2rem;
+.main-image-container:hover::after {
+  opacity: 1;
 }
 
-footer a {
-  color: #3248e5;
-  text-decoration: none;
+/* --- View Demo Button --- */
+#view-demo-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
+  color: #000;
   font-weight: 600;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  opacity: 1;
+  z-index: 2;
 }
 
-footer a:hover {
-  color: #6574ff;
+.main-image-container:hover #view-demo-btn {
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
+
+
+
+
+
+/* --- Thumbnails --- */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.thumb-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px; /* space between image and label */
+}
+
+.thumbnails img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 3px solid #e0e0e0;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.thumbnails img:hover {
+  opacity: 1;
+  transform: scale(1.06);
+  border-color: var(--accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnails img.selected {
+  border: 3px solid var(--accent);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumb-label {
+  font-size: 0.9rem;
+  color: #000;
+  text-align: center;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+
+/* --- Modal Styles --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1000px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 80vh;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .thumbnails img {
+    width: 120px;
+    height: 80px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+  </style>
+
+
+  <style>
+    /* Additional styles specific to this page can go here */
+
+    /* PROFILE CARD */
+    .profile-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-card img {
+      max-width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+  </style>
+
+
+  <style>
+    .projects-grid {
+      width: 90%;
+      max-width: 1400px;
+      /* increased from 1000px */
+      background: #fff;
+      margin: -60px auto 0 auto;
+      /* overlap yellow header */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      /* smaller min to fit 4 per row */
+      gap: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+  </style>
+
+  <style>
+    :root {
+      --dot1: #38bdf8;
+      /* cyan */
+      --dot2: #a78bfa;
+      /* purple */
+      --line: rgba(120, 150, 255, 0.15);
+
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 30%, #1e293b 0%, #0b1120 80%);
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 720px;
+      padding: 2rem;
+    }
+
+    /* Animated molecular background */
+    .molecular-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   </style>
 </head>
 
 <body>
-
-  <header>
-    <div class="header-container">
-      <h1>Proteomic Data Exploration Suite</h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#overview">Overview</a></li> |
-          <li><a href="#analysis">Analysis Highlights</a></li> |
-          <li><a href="#visualizations">Interactive Visualizations</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header id="pageHeader">
+    <nav class="main-nav">
+      <div class="nav-logo">Akash Koneti</div>
+      <ul class="nav-links">
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#projects">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
   </header>
 
+  <main>
+    <section class="hero">
+      <div class="molecular-bg">
+        <canvas id="molecularCanvas"></canvas>
+      </div>
+      <div class="hero-overlay"></div>
 
-  <section id="overview">
-    <h2>Project Overview</h2>
-    <p>
-      This project demonstrates advanced data analysis techniques applied to proteomics and mRNA datasets.
-      It includes PCA analysis, clustering, linear regression tests, statistical significance analysis, and
-      visualization of p-values.
-      The goal is to provide an interactive experience for exploring the relationships between proteins and gene
-      expression levels, highlighting significant findings.
-    </p>
+      <!-- LEFT: PROFILE CARD -->
+      <aside class="profile-card">
+        <img class="avatar" alt="Avatar" src="./Proteomics Data Exploration Suite.png">
 
-  </section>
+      </aside>
 
-  <section class="skills-row">
-    <div class="skills-row-image">
-      <img src="./Proteomics Data Exploration Suite.png" alt="Proteomics Dashboard" />
-    </div>
-    <div class="skills-row-content">
-      <h3>Key Skills Highlighted</h3>
-      <ul class="skills-list">
-        <li> Interactive dashboards with R Shiny</li>
-        <li> Dynamic visualizations with Plotly</li>
-        <li> Data preprocessing, cleaning, and transformation</li>
-        <li> Statistical analysis (regression, hypothesis testing)</li>
-        <li> Dimensionality reduction & multivariate analysis (PCA)</li>
-        <li> Reproducibility: saving interactive plots & structured pipeline</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="analysis">
-    <h2>Analysis Highlights</h2>
-    <div class="feature-list">
-      <div class="feature-item">
-        <h4>Normalization</h4>
-        <p>Normalization methods are applied to make samples comparable and remove batch effects.</p>
-      </div>
-      <div class="feature-item">
-        <h4>Identifying Differentially Expressed Proteins</h4>
-        <p>Statistical tests are used to find proteins with significant changes in abundance between groups (e.g.,
-          diseased vs healthy).</p>
-      </div>
-      <div class="feature-item">
-        <h4>T-tests</h4>
-        <p>Student's t-test or moderated t-tests (e.g., limma package) are applied to compare protein abundance between
-          two groups.</p>
-      </div>
-      <div class="feature-item">
-        <h4>ANOVA</h4>
-        <p>Extends t-tests to compare more than two groups or experiments with multiple factors and interactions.</p>
-      </div>
-      <div class="feature-item">
-        <h4>Fold Change Analysis</h4>
-        <p>Measures the ratio of protein abundance between two conditions, often visualized alongside p-values.</p>
-      </div>
-      <div class="feature-item">
-        <h4>Volcano Plots</h4>
-        <p>Combines fold change and statistical significance to highlight potential differentially expressed proteins.
+      <!-- RIGHT: HERO TEXT -->
+      <div class="hero-text">
+        <h1>
+          Proteomic Data Exploration Suite
+        </h1>
+        <p>
+          This project demonstrates advanced data analysis techniques applied to proteomics and mRNA datasets.
+          It includes PCA analysis, clustering, linear regression tests, statistical significance analysis, and
+          visualization of p-values.
+          The goal is to provide an interactive experience for exploring the relationships between proteins and gene
+          expression levels, highlighting significant findings.
         </p>
+        <div class="ctas">
+          <a href="#visualizations" class="btn">Interactive Visualizations</a>
+          <a href="#analysis" class="btn btn-outline">Analysis</a>
+        </div>
       </div>
-      <div class="feature-item">
-        <h4>Multiple Testing Correction</h4>
-        <p>Methods like FDR, Benjamini-Hochberg procedure, and Q-values are applied to control false positives.</p>
+    </section>
+
+
+
+    <div class="gallery-container" id="visualizations">
+      <h2>Interactive Visualizations</h2>
+      <div class="main-image-container">
+        <img id="main-image" src="images/volcano_plot.png" alt="Main" />
+        <button id="view-demo-btn">View Demo</button>
       </div>
-      <div class="feature-item">
-        <h4>Multivariate Analysis</h4>
-        <p>PCA, clustering, and machine learning methods (Random Forest, SVM, Elastic Net) are applied for feature
-          selection and predictive modeling.</p>
+<div class="thumbnails">
+  <div class="thumb-wrapper">
+    <img src="images/volcano_plot.png" data-demo="plots/Volcano_Plot.html" class="thumb selected" />
+    <span class="thumb-label">Volcano Plot</span>
+  </div>
+  <div class="thumb-wrapper">
+    <img src="images/regression_plot.png" data-demo="plots/Regression_Plot.html" class="thumb" />
+    <span class="thumb-label">Regression Plot</span>
+  </div>
+  <div class="thumb-wrapper">
+    <img src="images/histogram_plot.png" data-demo="plots/Histogram_Plot.html" class="thumb" />
+    <span class="thumb-label">Histogram Plot</span>
+  </div>
+  <div class="thumb-wrapper">
+    <img src="images/scatter_plot.png" data-demo="plots/Scatter_Plot.html" class="thumb" />
+    <span class="thumb-label">Scatter Plot</span>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="modal-body">Loading...</div>
       </div>
     </div>
-  </section>
 
-  <section id="visualizations">
-    <h2>Interactive Visualizations</h2>
 
-    <div class="plot-container">
-      <h3>1. Volcano Plot</h3>
-      <p>Highlighting significant proteins based on fold change and p-values.</p>
-      <iframe src="./plots/Volcano_Plot.html"></iframe>
-    </div>
 
-    <div class="plot-container">
-      <h3>2. Regression Plot</h3>
-      <p>Log2 regression analysis between proteome and transcriptome columns with R² metrics.</p>
-      <iframe src="./plots/Regression_Plot.html"></iframe>
-    </div>
 
-    <div class="plot-container">
-      <h3>3. Histogram Plot</h3>
-      <p>Distribution analysis of selected proteome and transcriptome columns.</p>
-      <iframe src="./plots/Histogram_Plot.html"></iframe>
-    </div>
 
-    <div class="plot-container">
-      <h3>4. Scatter Plot</h3>
-      <p>Fold change scatter plot with threshold-based highlighting of proteins.</p>
-      <iframe src="./plots/Scatter_Plot.html"></iframe>
-    </div>
 
-    <div class="plot-container">
-      <h3>5. PCA Plot</h3>
-      <p>Principal Component Analysis showing sample clustering and variation across conditions.</p>
-      <iframe src="./plots/PCA_Plot.html"></iframe>
-    </div>
 
-  </section>
+    <!-- Analysis SECTION -->
+    <section class="featured-projects" id="analysis">
+      <div class="projects-header">
+        <h2>Analysis Highlights</h2>
+      </div>
+      <div class="project-container">
+
+
+
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>Normalization</h3>
+            <p>Normalization methods are applied to make samples comparable and remove batch effects.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>Identifying Differentially Expressed Proteins</h3>
+            <p>Statistical tests are used to find proteins with significant changes in abundance between groups (e.g.,
+              diseased vs healthy).</p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>T-tests</h3>
+            <p>Student's t-test or moderated t-tests (e.g., limma package) are applied to compare protein abundance
+              between
+              two groups.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>ANOVA</h3>
+            <p>Extends t-tests to compare more than two groups or experiments with multiple factors and interactions.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>Fold Change Analysis</h3>
+            <p>Measures the ratio of protein abundance between two conditions, often visualized alongside p-values.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>Volcano Plots</h3>
+            <p>Combines fold change and statistical significance to highlight potential differentially expressed
+              proteins.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>Multiple Testing Correction</h3>
+            <p>Methods like FDR, Benjamini-Hochberg procedure, and Q-values are applied to control false positives.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="left-border"></span>
+            <span class="right-border"></span>
+
+            <h3>Multivariate Analysis</h3>
+            <p>PCA, clustering, and machine learning methods (Random Forest, SVM, Elastic Net) are applied for feature
+              selection and predictive modeling.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main>
+  <!-- Footer -->
+  <footer style="
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+  ">
+  <div class="social-links">
+    <a href="https://github.com/akashkoneti" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/akashkoneti" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="#contact" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.getElementById("pageHeader");
+      header.classList.add("visible");
+
+
+      // Toggle menu on mobile
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+
+    });
+  </script>
+  <script>
+    // Lightweight Molecular Background Animation
+    const canvas = document.getElementById('molecularCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const numParticles = 60;
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 2 + 1,
+        color: Math.random() > 0.5 ? '#93c5fd' : '#c7d2fe'
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = 0.8;
+        ctx.fill();
+
+        // Draw lines between nearby particles
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(147, 197, 253, 0.15)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+
+ <script>
+  const mainImage = document.getElementById("main-image");
+  const thumbnails = document.querySelectorAll(".thumb");
+  const viewDemoBtn = document.getElementById("view-demo-btn");
+  const modal = document.getElementById("modal");
+  const modalBody = document.getElementById("modal-body");
+  const closeBtn = document.querySelector(".close-btn");
+
+  let currentDemo = "plots/Volcano_Plot.html"; // default
+
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      thumbnails.forEach(t => t.classList.remove("selected"));
+      thumb.classList.add("selected");
+      mainImage.src = thumb.src;
+      currentDemo = thumb.getAttribute("data-demo");
+    });
+  });
+
+  viewDemoBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalBody.innerHTML = `<iframe src="${currentDemo}" frameborder="0" style="width:100%; height:80vh;"></iframe>`;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalBody.innerHTML = "Loading...";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      modalBody.innerHTML = "Loading...";
+    }
+  });
+</script>
+
+
 
 </body>
 

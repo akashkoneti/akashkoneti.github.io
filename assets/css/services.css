@@ -1,4 +1,6 @@
 
+/**************************************** Service Card Styles ****************************************/
+
  /* SERVICES SECTION - DARK THEME, IMAGE ICONS, SHARP CARDS */
 .services {
   background: #0b0c0f;
@@ -104,6 +106,7 @@
     padding: 4rem 1.5rem;
   }
 
-  .services h2 { font-size: 2.2rem; }
   .services-intro { font-size: 1rem; }
 }
+
+
