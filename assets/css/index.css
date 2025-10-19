@@ -72,6 +72,15 @@
   color: var(--accent);
 }
 
+
+
+.nav-logo a {
+   color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
 .nav-links {
   list-style: none;
   display: flex;

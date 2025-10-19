@@ -1,71 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Extraction & Automation Portfolio | Akash Koneti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Akash Koneti - Data Science Portfolio</title>
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/hero.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f7f9fb;
-      color: #222;
-    }
-    header {
-      background: linear-gradient(120deg, #4a6cf7, #6574ff);
-      color: white;
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 3rem 1rem 2rem;
+      background: radial-gradient(circle at 30% 30%, #1e293b 0%, #0b1120 80%);
     }
-    header h1 {
-      font-size: 2.3rem;
-      margin-bottom: 0.5rem;
+
+
+    #polygonCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
     }
-    header p {
-      font-size: 1rem;
-      opacity: 0.9;
-      max-width: 650px;
-      margin: 0 auto;
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 2rem;
     }
-    section {
+
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #d1d5db;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      /* space between stats and hero text */
+      flex-wrap: wrap;
+      /* will stack on small screens */
+    }
+
+    .profile-card {
+      display: flex;
+      gap: 20px;
+      /* space between each stat card */
+      max-width: 500px;
+    }
+  </style>
+
+
+  <style>
+    .projects-section {
       max-width: 1000px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
+
     .project {
       background: #fff;
       border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       padding: 2rem;
       margin-bottom: 2rem;
     }
+
     .project h2 {
-      color: #3248e5;
+      color: #000000;
       margin-bottom: 0.3rem;
       font-size: 1.2rem;
     }
+
     .project h3 {
       color: #444;
       font-size: 1rem;
       margin-bottom: 0.6rem;
       font-weight: 500;
     }
+
     .project p {
       font-size: 0.95rem;
       color: #333;
       margin-bottom: 0.6rem;
     }
+
     .project ul {
       margin: 0.5rem 0 0.8rem;
       padding-left: 1.2rem;
       font-size: 0.9rem;
-        line-height: 1.5;
+      line-height: 1.5;
     }
+
+    .project li {
+      color: #333;
+    }
+
     .badge {
-      background: #e9ebff;
-      color: #3248e5;
+      background: var(--accent);
+      color: #000000;
       border-radius: 12px;
       padding: 4px 10px;
       margin-right: 5px;
@@ -73,65 +126,51 @@
       font-weight: 500;
       display: inline-block;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      background: #f0f1f8;
-      color: #777;
-    }
 
-/* -------------------------
+
+    /* -------------------------
        Stats section (themed)
        ------------------------- */
-   .stats-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin: 50px auto;
-  max-width: 1100px;
-  text-align: center;
-  padding: 0 1rem;
-}
+
+
 
     .stat-card {
-      flex: 1 1 220px;
-      background: #fff;
+      flex: 1 1 120px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
       color: #222;
       border-radius: 14px;
       padding: 20px 22px;
       text-align: center;
-      box-shadow: 0 6px 18px rgba(50,72,229,0.06);
-      border: 1px solid rgba(50,72,229,0.04);
+      box-shadow: 0 6px 18px rgba(50, 72, 229, 0.06);
+      border: 1px solid rgba(50, 72, 229, 0.04);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-      min-width: 190px;
     }
 
     .stat-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 18px 40px rgba(50,72,229,0.12);
+      box-shadow: 0 18px 40px rgba(50, 72, 229, 0.12);
     }
 
     .stat-number {
-      font-size: 2.1rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #3248e5; /* primary accent (matches project titles) */
+      color: var(--accent);
+      /* primary accent (matches project titles) */
       margin: 4px 0;
       letter-spacing: -0.5px;
     }
 
     .stat-sub {
       margin-top: 8px;
-      font-size: 0.975rem;
-      color: #444;
+      font-size: 0.8rem;
+      color: #e5e5e5;
     }
 
     .stat-small {
       display: block;
       font-size: 0.8rem;
-      color: #8a8fa8;
+      color: #e5e5e5;
       margin-top: 6px;
     }
 
@@ -143,182 +182,339 @@
       width: 42px;
       height: 42px;
       border-radius: 10px;
-      background: linear-gradient(135deg, rgba(50,72,229,0.12), rgba(101,116,255,0.08));
+      background: linear-gradient(135deg, rgba(50, 72, 229, 0.12), rgba(101, 116, 255, 0.08));
       margin: 0 auto 10px;
-      color: #3248e5;
+      color: var(--accent);
       font-size: 1.05rem;
     }
 
     @media (max-width: 780px) {
-      .stat-card { flex: 1 1 100%; max-width: 520px; }
-      section { padding: 0 1rem; }
+      .stat-card {
+        flex: 1 1 100%;
+        max-width: 520px;
+      }
+
+      section {
+        padding: 0 1rem;
+      }
     }
   </style>
+
+
+
+
 </head>
+
 <body>
-
-  <header>
-    <h1>Data Extraction & Automation Projects</h1>
-    <p>End-to-end data pipelines, intelligent scraping systems, and structured data automations.</p>
+  <header id="pageHeader">
+    <nav class="main-nav">
+      <div class="nav-logo"><a href="../../">Akash Koneti</a></div>
+      <ul class="nav-links">
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#projects">Projects</a></li>
+        <li><a href="../../#services">Services</a></li>
+        <li><a href="../../#skills">Skills</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
   </header>
-<!-- Stats Section (themed) -->
-  <section class="stats-section">
-    <div class="stat-card">
-      <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
-      <div class="stat-number">15+</div>
-      <div class="stat-sub">Websites Extracted</div>
-      <span class="stat-small">Across diverse domains & structures</span>
-    </div>
 
-    <div class="stat-card">
-      <div class="stat-icon"><i class="fa-solid fa-table-list"></i></div>
-      <div class="stat-number">1.4M+</div>
-      <div class="stat-sub">Data Records Processed</div>
-      <span class="stat-small">Cleaned, validated, and exported</span>
-    </div>
+  <main>
 
-    <div class="stat-card">
-      <div class="stat-icon"><i class="fa-solid fa-sitemap"></i></div>
-      <div class="stat-number">10</div>
-      <div class="stat-sub">Major Pipelines</div>
-      <span class="stat-small">Playwright, Selenium, Async, Requests</span>
-    </div>
+    <section class="hero">
+      <canvas id="polygonCanvas"></canvas>
+      <div class="hero-overlay"></div>
 
+      <div class="hero-inner">
+        <!-- LEFT: STATS -->
+        <aside class="profile-card">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="stat-number">15+</div>
+            <div class="stat-sub">Websites Extracted</div>
+          </div>
 
-  </section>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-table-list"></i></div>
+            <div class="stat-number">1.4M+</div>
+            <div class="stat-sub">Data Records Processed</div>
+          </div>
 
-  <section>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-sitemap"></i></div>
+            <div class="stat-number">10</div>
+            <div class="stat-sub">Major Pipelines</div>
+          </div>
+        </aside>
 
-    <div class="project">
-      <h2>Telkomsel Product Data Scraper</h2>
-
-      <ul>
-        <li>Developed a fully asynchronous pipeline using <b>AsyncIO</b> and <b>aiohttp</b> to process 80,000+ addresss in parallel.</li><li>Automated extracting plans available in each address using <b>Playwright</b>.</li>
-        <li>Implemented async session handling and retry queue for failed requests.</li>
-        <li>Built rate-limit aware scheduler using <b>asyncio.sleep()</b>.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">Playwright</span>
-        <span class="badge">AsyncIO</span>
-      <span class="badge">API</span></div>
-    </div>
-    
-    <div class="project">
-      <h2>Wayback Machine WordPress Extractor</h2>
-
-      <ul>
-        <li>Automated extraction of wordpress posts for an archiuved site using <b>requests</b></li>
-        <li>Created parsers using <b>BeautifulSoup</b> and <b>lxml</b> to extract titles, categories, tags, and content.</li>
-        <li>Automated conversion of extracted posts into a <b>WordPress XML</b> importable format.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">BeautifulSoup</span>
-        <span class="badge">lxml</span>
-        <span class="badge">XML</span>
+        <!-- RIGHT: HERO TEXT -->
+        <div class="hero-text" style="text-align: left;">
+          <h1>Data Extraction & Automation Projects</h1>
+          <p>End-to-end data pipelines, intelligent scraping systems, and structured data automations.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="project">
-      <h2>PDF Data Extraction &amp; Report Generation</h2>
+    </section>
 
-      <ul>
-        <li>Built a parser using <b>PyPDF2</b> and <b>pdfplumber</b> to extract tabular and textual data.</li>
-        <li>Developed logic to dynamically clean, normalize, and structure the extracted content.</li>
-        <li>Integrated with <b>Plotly</b> to generate interactive charts.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">PyPDF2</span>
-        <span class="badge">pdfplumber</span>
-        <span class="badge">Plotly</span>
+
+
+
+
+
+    <section class="projects-section">
+
+      <div class="project">
+        <h2>Telkomsel Product Data Scraper</h2>
+
+        <ul>
+          <li>Developed a fully asynchronous pipeline using <b>AsyncIO</b> and <b>aiohttp</b> to process 80,000+
+            addresss in parallel.</li>
+          <li>Automated extracting plans available in each address using <b>Playwright</b>.</li>
+          <li>Implemented async session handling and retry queue for failed requests.</li>
+          <li>Built rate-limit aware scheduler using <b>asyncio.sleep()</b>.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">Playwright</span>
+          <span class="badge">AsyncIO</span>
+          <span class="badge">API</span>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-      <h2>Zillow Real Estate Agent Extractor</h2>
+      <div class="project">
+        <h2>Wayback Machine WordPress Extractor</h2>
 
-      <ul>
-        <li>Designed a <b>Selenium automation</b> to navigate paginated agent listings.</li>
-        <li>Integrated <b>proxy and header rotation</b> to bypass Cloudflare detection.</li>
-        <li>Added checkpoint-based data saving for long sessions.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">Selenium</span>
-        <span class="badge">ProxyMesh</span>
+        <ul>
+          <li>Automated extraction of wordpress posts for an archiuved site using <b>requests</b></li>
+          <li>Created parsers using <b>BeautifulSoup</b> and <b>lxml</b> to extract titles, categories, tags, and
+            content.</li>
+          <li>Automated conversion of extracted posts into a <b>WordPress XML</b> importable format.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">BeautifulSoup</span>
+          <span class="badge">lxml</span>
+          <span class="badge">XML</span>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-      <h2>Election Results Data Extraction</h2>
+      <div class="project">
+        <h2>PDF Data Extraction &amp; Report Generation</h2>
 
-      <ul>
-        <li>Combined <b>Playwright</b> (for JS pages) with <b>Requests</b> (for backend APIs).</li>
-        <li>Built asynchronous data pipeline to fetch multiple constituencies in parallel.</li>
-        <li>Added dynamic rate-limiting, rotating headers, and auto-resume checkpoints.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">Playwright</span>
-        <span class="badge">Requests</span>
-        <span class="badge">AsyncIO</span>
+        <ul>
+          <li>Built a parser using <b>PyPDF2</b> and <b>pdfplumber</b> to extract tabular and textual data.</li>
+          <li>Developed logic to dynamically clean, normalize, and structure the extracted content.</li>
+          <li>Integrated with <b>Plotly</b> to generate interactive charts.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">PyPDF2</span>
+          <span class="badge">pdfplumber</span>
+          <span class="badge">Plotly</span>
+        </div>
       </div>
-    </div>
-        
-    <div class="project">
-      <h2>FCC DTV Data Extraction</h2>
 
-      <ul>
-        <li>Developed a fully asynchronous pipeline to process 40,000+ ZIP codes in parallel.</li>
-        <li>Built retry logic, adaptive rate limiting, and <b>header randomization</b> to avoid API throttling.</li>
-        <li>Implemented checkpoint-based resume for large runs and progress logging.</li>
-        <li>Exported final structured results into CSV and JSON for further modeling.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">AsyncIO</span>
-        <span class="badge">aiohttp</span>
-        <span class="badge">pandas</span>
+      <div class="project">
+        <h2>Zillow Real Estate Agent Extractor</h2>
+
+        <ul>
+          <li>Designed a <b>Selenium automation</b> to navigate paginated agent listings.</li>
+          <li>Integrated <b>proxy and header rotation</b> to bypass Cloudflare detection.</li>
+          <li>Added checkpoint-based data saving for long sessions.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">Selenium</span>
+          <span class="badge">ProxyMesh</span>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-      <h2>ICD-10 Medical Code Extractor</h2>
+      <div class="project">
+        <h2>Election Results Data Extraction</h2>
 
-      <ul>
-        <li>Built recursive logic to parse hierarchical ICD code structures.</li>
-        <li>Flattened nested data into normalized tabular format using pandas.</li>
-        <li>Optimized runtime by replacing recursion with iterative generators.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">Requests</span>
-        <span class="badge">Regex</span>
-        <span class="badge">pandas</span>
+        <ul>
+          <li>Combined <b>Playwright</b> (for JS pages) with <b>Requests</b> (for backend APIs).</li>
+          <li>Built asynchronous data pipeline to fetch multiple constituencies in parallel.</li>
+          <li>Added dynamic rate-limiting, rotating headers, and auto-resume checkpoints.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">Playwright</span>
+          <span class="badge">Requests</span>
+          <span class="badge">AsyncIO</span>
+        </div>
       </div>
-    </div>
 
+      <div class="project">
+        <h2>FCC DTV Data Extraction</h2>
 
-    <div class="project">
-      <h2>Feria Valencia Exhibitor Scraper</h2>
-
-      <ul>
-        <li>Automated data collection using <b>Playwright</b> for infinite-scroll content.</li>
-        <li>Developed pagination handling, proxy rotation, and dynamic delay scheduling.</li>
-        <li>Structured final outputs with exhibitor, booth, and contact data.</li>
-      </ul>
-      <div>
-        <span class="badge">Python</span>
-        <span class="badge">Playwright</span>
-        <span class="badge">Proxy Rotation</span>
+        <ul>
+          <li>Developed a fully asynchronous pipeline to process 40,000+ ZIP codes in parallel.</li>
+          <li>Built retry logic, adaptive rate limiting, and <b>header randomization</b> to avoid API throttling.</li>
+          <li>Implemented checkpoint-based resume for large runs and progress logging.</li>
+          <li>Exported final structured results into CSV and JSON for further modeling.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">AsyncIO</span>
+          <span class="badge">aiohttp</span>
+          <span class="badge">pandas</span>
+        </div>
       </div>
-    </div>
-    
-    
 
-  </section>
+      <div class="project">
+        <h2>ICD-10 Medical Code Extractor</h2>
+
+        <ul>
+          <li>Built recursive logic to parse hierarchical ICD code structures.</li>
+          <li>Flattened nested data into normalized tabular format using pandas.</li>
+          <li>Optimized runtime by replacing recursion with iterative generators.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">Requests</span>
+          <span class="badge">Regex</span>
+          <span class="badge">pandas</span>
+        </div>
+      </div>
+
+
+      <div class="project">
+        <h2>Feria Valencia Exhibitor Scraper</h2>
+
+        <ul>
+          <li>Automated data collection using <b>Playwright</b> for infinite-scroll content.</li>
+          <li>Developed pagination handling, proxy rotation, and dynamic delay scheduling.</li>
+          <li>Structured final outputs with exhibitor, booth, and contact data.</li>
+        </ul>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">Playwright</span>
+          <span class="badge">Proxy Rotation</span>
+        </div>
+      </div>
+
+    </section>
+
+
+  </main>
+  <!-- Footer -->
+  <footer style="
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+  ">
+    <div class="social-links">
+      <a href="https://github.com/akashkoneti" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/akashkoneti" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="#contact" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.getElementById("pageHeader");
+      header.classList.add("visible");
+
+
+      // Toggle menu on mobile
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+
+    });
+  </script>
+
+
+  <script>
+    const canvas = document.getElementById('polygonCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Polygon {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = 4 + Math.random() * 8;
+        this.sides = [3, 4, 6][Math.floor(Math.random() * 3)]; // triangle, square, hexagon
+        this.speedX = (Math.random() - 0.5) * 0.2;
+        this.speedY = (Math.random() - 0.5) * 0.2;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.004;
+        this.color = 'rgba(255, 255, 255, 0.06)'; // monochrome
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.beginPath();
+        for (let i = 0; i < this.sides; i++) {
+          const angle = (i / this.sides) * Math.PI * 2;
+          const px = Math.cos(angle) * this.size;
+          const py = Math.sin(angle) * this.size;
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.closePath();
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.restore();
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.rotation += this.rotationSpeed;
+
+        // Wrap around screen
+        if (this.x > canvas.width + this.size) this.x = -this.size;
+        if (this.x < -this.size) this.x = canvas.width + this.size;
+        if (this.y > canvas.height + this.size) this.y = -this.size;
+        if (this.y < -this.size) this.y = canvas.height + this.size;
+      }
+    }
+
+    const polygons = [];
+    for (let i = 0; i < 50; i++) {
+      polygons.push(new Polygon());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      polygons.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+
 
 </body>
+
 </html>
