@@ -9,6 +9,5 @@ This is my personal portfolio, showcasing my journey in **Data Science**, **Mach
 - **Blogs** and tutorials on AI & Data Science
 - Insights into my learning and work
 
-### Credits
-- Splash page animation inspired by [Hitesh Sahu on CodePen](https://codepen.io/hiteshsahu/pen/MOgzej)
+
 
