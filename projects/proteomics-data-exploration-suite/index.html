@@ -259,7 +259,7 @@
 
     .hero {
       position: relative;
-      height: 100vh;
+      height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -286,6 +286,50 @@
       height: 100%;
       display: block;
     }
+
+    /* Fade-in and slide-up animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to hero content */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: white;
+  padding: 3rem 1rem;
+  opacity: 0;
+  animation: fadeSlideUp 1.2s ease-out forwards;
+}
+
+/* Slight stagger for elements inside hero */
+.hero-text h1 {
+  animation: fadeSlideUp 1.2s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.hero-text p {
+  animation: fadeSlideUp 1.2s ease-out 0.25s forwards;
+  opacity: 0;
+}
+.ctas {
+  animation: fadeSlideUp 1.2s ease-out 0.45s forwards;
+  opacity: 0;
+}
+
+.profile-card {
+  animation: fadeSlideUp 1.2s ease-out 0.45s forwards;
+  opacity: 0;
+}
+
   </style>
 </head>
 
