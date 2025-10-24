@@ -3,7 +3,7 @@
 
  /* SERVICES SECTION - DARK THEME, IMAGE ICONS, SHARP CARDS */
 .services {
-  background: #0b0c0f;
+  background: var(--darkbg); /*#0b0c0f*/
   color: #eee;
   padding: 6rem 2rem;
   text-align: center;
@@ -39,7 +39,7 @@
 
 /* SERVICE CARD */
 .service-card {
-  background: #0b0c0f; /* same as section */
+  background: var(--darkbg); /* same as section */
   border: 2px solid #333;
   border-radius: 0;
   padding: 2rem 1.5rem;
